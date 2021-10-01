@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My Account</h1>
+
+<p> Hello <b>Ruchit</b> You can select from the list of Subscription Plans</p>
+
+<h2>My Subscriptions</h2>
+
+<table>
+    <thead>
+    <tr>
+    <th>SUBSCRIPTION ID</th>
+    <th>TYPE</th>
+    <th>STARTING DATE</th>
+    <th>END DATE</th>
+    <th>AMOUNT</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>59</td>
+    <td>Unlimited</td>
+    <td>Nov 1, 2021</td>
+    <td>-</td>
+    <td>$133.95/month</td>
+    <td>
+        <button type="button"> Select subscription</button>
+    </td>
+    </tr>
+    <tr>
+        <td>39</td>
+        <td>Limited 1000GB</td>
+        <td>October 23, 2021</td>
+        <td>-</td>
+        <td>$17.95/month</td>
+        <td>
+            <button type="button"> Select subscription</button>
+        </td>
+        </tr>
+
+        <tr>
+            <td>58</td>
+            <td>Limited 2000GB</td>
+            <td>October 13, 2021</td>
+            <td>-</td>
+            <td>$29.95/month</td>
+            <td>
+                <button type="button"> Select subscription</button>
+            </td>
+    </tbody>
+
+</table>
+
+</body>
+</html>
