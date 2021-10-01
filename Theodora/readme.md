@@ -21,3 +21,7 @@ Data needed:
 - tariff
 - rental
 - duration
+
+
+Notes to myself:
+Creating big blocks in DOM similar to pages so it'll be easier to display None and block to switch on link
