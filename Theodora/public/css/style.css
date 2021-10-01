@@ -1,0 +1,39 @@
+/* Customer */
+
+header p{
+    text-align: right;
+}
+
+section{
+    margin: 2% 5%;
+}
+
+.titlePage{
+    margin: 4% 0%;
+}
+
+.pageContent{
+    margin-bottom: 2%;
+}
+
+.display{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: lightgray;
+}
+
+.col{
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 2%;
+}
+.col:first-child{
+    border: 1px black solid;
+}
+
+th{
+    border: 2px black solid;
+    padding: 0%;
+    
+}
