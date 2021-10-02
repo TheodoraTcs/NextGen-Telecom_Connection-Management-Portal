@@ -1,0 +1,91 @@
+/* :root {
+    link: #000;
+    hover: #b00;
+    main:#000;
+    background:white;
+    font-size: large;
+    
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:yellow;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 900;
+    padding: 40px 0;
+}
+
+.container {
+    width: auto;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 150px;
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+nav {
+    display: flex;
+
+}
+
+nav {
+    display: inline-block;
+    color: #000;
+    font-size: larger;
+    font-weight: bold;
+    margin: 0 0 0 5px;
+    padding: 5px 10px;
+    transition: all 300ms ease-in-out;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+.intro {
+    width :100%;
+    text-align: center;
+    overflow: hidden;
+    font-size: large;
+    text-transform: uppercase;
+}
+
+.intro-title {
+    color: #000;
+    font-size: larger;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: white;
+
+}
