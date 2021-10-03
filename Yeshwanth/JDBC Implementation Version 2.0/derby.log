@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sun Oct 03 17:06:42 CEST 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-017c-46b1-61ed-00000eb3f3c0 
+on database directory C:\Users\2088497\MyDB with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Loaded from file:/C:/Users/2088497/eclipse-neon-workspace/JDBC%20Implementation%20Version%202.0/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_281-b09
+user.dir=C:\Users\2088497\eclipse-neon-workspace\JDBC Implementation Version 2.0
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
