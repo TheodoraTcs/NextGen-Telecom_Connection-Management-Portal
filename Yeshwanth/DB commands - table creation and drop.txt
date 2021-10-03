@@ -1,0 +1,18 @@
+create table tbl_Customers(customerId int primary key, customerName varchar(10), 
+customerAddress varchar(25), customerEmail varchar(20), customerNumber int unique, 
+customerPassword varchar(15));
+
+create table tbl_TariffPlan(id int unique, planName varchar(15), typeOfPlan varchar(30), 
+tariffRate double, validity int, rental boolean);
+
+create table tbl_Bill(billId int unique, customerId int references tbl_Customers(customerId), month int, fee decimal(6,2));
+
+create table tbl_Plans(planName varchar(30), customerId int references tbl_Customers(customerId), dateOfStart date);
+
+drop table tbl_Bill;
+
+drop table tbl_Plans;
+
+drop table tbl_Customers;
+
+drop table tbl_TariffPlan;
