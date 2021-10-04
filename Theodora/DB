@@ -1,0 +1,42 @@
+create table tbl_Customers(customerId int primary key, customerName varchar(10), 
+customerAddress varchar(25), customerEmail varchar(20), customerNumber int unique, 
+customerPassword varchar(15));
+
+create table tbl_TariffPlan(id int unique, planName varchar(15), typeOfPlan varchar(30), 
+tariffRate double, validity int, rental boolean);
+
+create table tbl_Plans(planName varchar(30), customerId int references tbl_Customers(customerId), dateOfStart date);
+
+insert into TBL_CUSTOMERS values (1, 'John John', 'Ave Liberté 1, 1000 BXL', 'john.john@gmail.com', 0440440400, 'passwordABC');
+insert into TBL_CUSTOMERS values (2, 'Ann Ann', 'Ave Liberté 101, 1000 BXL', 'Ann.Ann@gmail.com', 0470770700, 'passwordBCD');
+insert into TBL_CUSTOMERS values (3, 'Lin Lin', 'Ave Liberté 72, 1000 BXL', 'Lin.Lin@gmail.com', 0490990900, 'passwordCDE');
+insert into TBL_CUSTOMERS values (4, 'Mary Mary', 'Ave Liberté 287, 1000 BXL', 'Mary.Mary@gmail.com', 0450550500, 'passwordDEF');
+insert into TBL_CUSTOMERS values (5, 'Ben Ben', 'Ave Liberté 378, 1000 BXL', 'Ben.Ben@gmail.com', 0420220200, 'passwordEFG');
+insert into TBL_CUSTOMERS values (6, 'Sam Sam', 'Ave Liberté 24, 1000 BXL', 'Sam.Sam@gmail.com', 0410110100, 'passwordFGH');
+
+insert into TBL_TARIFFPLAN values(1, 'Plan 1', 'Unlimited', 133.95, 365, false);
+insert into TBL_TARIFFPLAN values(2, 'Plan 2', 'Limited 1000GB', 17.95, 365, true);
+insert into TBL_TARIFFPLAN values(3, 'Plan 3', 'Limited 2000GB', 29.95, 365, true);
+
+insert into TBL_PLANS values('Plan 1', 1, '04.10.2021');
+insert into TBL_PLANS values('Plan 2', 2, '01.10.2021');
+insert into TBL_PLANS values('Plan 3', 3, '30.09.2021');
+insert into TBL_PLANS values('Plan 1', 4, '29.09.2021');
+insert into TBL_PLANS values('Plan 3', 5, '05.10.2021');
+insert into TBL_PLANS values('Plan 3', 6, '06.10.2021');
+
+select * from TBL_CUSTOMERS;
+select * from TBL_TARIFFPLAN;
+select * from TBL_PLANS;
+
+
+select * from TBL_PLANS
+join TBL_TARIFFPLAN on TBL_PLANS.planName=TBL_TARIFFPLAN.planName
+WHERE TBL_PLANS.customerId=1;
+
+select TBL_CUSTOMERS.CUSTOMERID, customerName, planName, dateOfStart, customerAddress, customerEmail, customerEmail from TBL_CUSTOMERS
+join TBL_PLANS on TBL_CUSTOMERS.customerId=TBL_PLANS.customerId ;
+
+select TBL_CUSTOMERS.CUSTOMERID, customerName, planName, dateOfStart, customerAddress, customerEmail, customerEmail from TBL_CUSTOMERS
+join TBL_PLANS on TBL_CUSTOMERS.customerId=TBL_PLANS.customerId
+WHERE TBL_CUSTOMERS.customerId=1;
