@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Yeshwanth/JDBC Implementation Version 2.0/src"/>
+	<classpathentry kind="src" path="Yeshwanth/JDBC/src"/>
+	<classpathentry kind="lib" path="Yeshwanth/JDBC Implementation Version 2.0/lib/derby.jar"/>
+	<classpathentry kind="lib" path="Yeshwanth/JDBC/lib/derby.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="Yeshwanth/JDBC/bin"/>
+</classpath>

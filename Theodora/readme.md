@@ -6,6 +6,28 @@ As a Customer
 As a Relationship Manager
 - Find a customer subscription by registrationID
 
+Data available
+*tbl_Customers*
+- customerId
+- customerName
+- customerAddress
+- customerEmail
+- customerNumber
+- customerPassword
+
+*tbl_Plans*
+- planName
+- customerId
+- dateOfStart
+
+*tbl_Tarriffplan*
+- id
+- planName
+- typeOfPlan
+- tariffRate
+- validity
+- rental
+
 
 Data needed:
 - registrationID
@@ -21,7 +43,3 @@ Data needed:
 - tariff
 - rental
 - duration
-
-
-Notes to myself:
-Creating big blocks in DOM similar to pages so it'll be easier to display None and block to switch on link
