@@ -1,7 +1,7 @@
 .container {
   display: block;
   position: relative;
-  padding-left: 35px;
+  padding-left: 75px;
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 18px;
@@ -18,10 +18,33 @@
   font-weight: bold;
 }
 
+body{
+  background-color: aliceblue;
+}
+
+h2 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.mainContainer{
+  padding: 50px;
+  display: block;
+  position: relative;
+  margin:auto;
+  width:50%;
+  margin-top: 5%;
+  background-color: white;
+  border-radius: 10px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
 hr{
-width: 50%;
-text-align: left;
-margin-left: 5%;
+  width: 96%;
+  text-align: left;
+  margin-left: 2%;
 }
 
 form{
@@ -40,6 +63,7 @@ body {
 
 /* Hide the browser's default radio button */
 .container input {
+  
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -51,15 +75,19 @@ body {
 .checkmark {
   position: absolute;
   top: 33%;
-  left: 0;
+  left: 20px;
   height: 25px;
   width: 25px;
-  background-color: #eee;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  background-color: rgb(255, 255, 255);
   border-radius: 50%;
 }
 
 /* colour when button is checked */
 .container input:checked ~ .checkmark {
+  border-width: 0ch;
   background-color: #8000ff;
 }
 
@@ -95,7 +123,7 @@ button {
     font-weight: 750;
     border-radius: 25px;
     letter-spacing: 2px;
-    margin-left: 5%;
+    margin-left: 75px;
     text-transform: uppercase;
     cursor: pointer;
 }
