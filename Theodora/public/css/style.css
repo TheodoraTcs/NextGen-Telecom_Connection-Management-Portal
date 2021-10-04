@@ -13,15 +13,16 @@ section{
 .pageContent{
     margin-bottom: 2%;
 }
+
 .display{
     display: flex;
     flex-direction: column;
-    width: 60%;
     background-color: lightgray;
 }
 .col{
     display: flex;
     justify-content: space-between;
+    text-align: center;
     padding: 0% 2%;
 }
 .col:first-child{
@@ -34,3 +35,7 @@ th{
 }
 
 /* Relationship Manager */
+.pageManager{
+    display: flex;
+    justify-content: space-between;
+}
