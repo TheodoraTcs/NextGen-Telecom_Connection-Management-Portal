@@ -13,6 +13,13 @@
   
 }
 
+.containerPlans{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .planName {
   font-size: 25px;
   font-weight: bold;
@@ -27,6 +34,18 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   font-weight: bold;
+}
+
+.plans{
+    padding: 20px;
+    display: block;
+    position: relative;
+    margin:auto;
+    width:45%;
+    margin-top: 5%;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .mainContainer{
@@ -47,11 +66,11 @@ hr{
   margin-left: 2%;
 }
 
-form{
-  align-items: center;
-  align-self: center;
-  align-content: center;
+.buttons {
+  width: 100%;
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 body {
@@ -91,6 +110,11 @@ body {
   background-color: #8000ff;
 }
 
+.container input:disabled ~ .checkmark {
+  border-width: 0ch;
+  background-color: #cccccc;
+}
+
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
   content: "";
@@ -116,14 +140,14 @@ body {
 button {
     background: #8000ff;
     color: white;
-    margin: 10px 05px;
-    width: 20%;
+    margin-top: 20px;
+    width: 33%;
     height: 50px;
     border: none;
     font-weight: 750;
     border-radius: 25px;
     letter-spacing: 2px;
-    margin-left: 75px;
+    margin-left: 2%;
     text-transform: uppercase;
     cursor: pointer;
 }
