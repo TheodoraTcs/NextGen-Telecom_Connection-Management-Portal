@@ -75,17 +75,19 @@ ready(function(){
 	var form = document.getElementById('form_ChangePlan');
 	form.addEventListener('submit', showMessage);
 	
-	var res = JSON.parse(plans)["plans"];
-	res.forEach(element => addRadioOption(element));
+	
 
 	var currentPlans = JSON.parse(current)["plans"];
 	currentPlans.forEach(element => addSubscription(element));
+
+	var res = JSON.parse(plans)["plans"];
+	res.forEach(element => addRadioOption(element));
 
 	//Check that at least a radio button is selected and change the button to enabled
 	if (document.querySelector('input[name="radio"]')) {
 		document.querySelectorAll('input[name="radio"]').forEach((elem) => {
 		  elem.addEventListener("change", function(event) {
-			  document.querySelector('button').disabled = false;
+			  document.getElementById('submit').disabled = false;
 		  });
 		});
 	  }
