@@ -3,6 +3,7 @@ package com.demo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import com.bean.Bill;
 import com.bean.Customer;
@@ -14,6 +15,8 @@ import com.service.PlansService;
 import com.service.TariffPlanService;
 
 public class CustomerDemo {
+
+	private static Scanner sc;
 
 	public static void main(String[] args) {
 
@@ -34,19 +37,62 @@ public class CustomerDemo {
 		System.out.println("Plan updation status");
 		System.out.println(TariffPlanService.registerTariffPlan(planC));
 		
+		System.out.println("Following plans are offered by our company at the moment:");
+		System.out.println("Plan A: " + planA.getPlanName() + ", Offers: " + planA.getTypeOfPlan() + ", Monthly Tariff: " + planA.getTariffRate() + "€, Validity: " + planA.getValidity() + " yrs");
+		System.out.println("Plan B: " + planB.getPlanName() + ", Offers: " + planB.getTypeOfPlan() + ", Monthly Tariff: " + planB.getTariffRate() + "€, Validity: " + planB.getValidity() + " yrs");
+		System.out.println("Plan C: " + planC.getPlanName() + ", Offers: " + planC.getTypeOfPlan() + ", Monthly Tariff: " + planC.getTariffRate() + "€, Validity: " + planC.getValidity() + " yrs");
+		
+		System.out.println("Select the plans that you would like to subscribe to. For example, if you want to select plan A just type 'a'. If you want to select more than one plan, let's say plan B and C, then type 'bc'.");
+		sc = new Scanner(System.in);
+		System.out.print("Enter your choices: ");
+		String str1= sc.nextLine();
+		
 		LocalDate dateOfStart = LocalDate.now();
 		
 		List<TariffPlan> tariffPlansCustomer1 = new ArrayList<TariffPlan>();
-		tariffPlansCustomer1.add(planA);
-		tariffPlansCustomer1.add(planC);
+		if(str1 != null) {
+			if(str1.toLowerCase().equals("a")) {
+				tariffPlansCustomer1.add(planA);
+			}
+			else if(str1.toLowerCase().equals("b")) {
+				tariffPlansCustomer1.add(planB);
+			}
+			else if(str1.toLowerCase().equals("c")) {
+				tariffPlansCustomer1.add(planC);
+			}
+			else if(str1.toLowerCase().equals("ab") || str1.toLowerCase().equals("ba")) {
+				tariffPlansCustomer1.add(planA);
+				tariffPlansCustomer1.add(planB);
+			}
+			else if(str1.toLowerCase().equals("ac") || str1.toLowerCase().equals("ca")) {
+				tariffPlansCustomer1.add(planA);
+				tariffPlansCustomer1.add(planC);
+			}
+			else if(str1.toLowerCase().equals("bc") || str1.toLowerCase().equals("cb")) {
+				tariffPlansCustomer1.add(planB);
+				tariffPlansCustomer1.add(planC);
+			}
+			else if(str1.toLowerCase().equals("abc") || str1.toLowerCase().equals("bca")
+					|| str1.toLowerCase().equals("cab") || str1.toLowerCase().equals("bac")
+					|| str1.toLowerCase().equals("cba") || str1.toLowerCase().equals("acb")) {
+				tariffPlansCustomer1.add(planA);
+				tariffPlansCustomer1.add(planB);
+				tariffPlansCustomer1.add(planC);
+			}
+			System.out.println("Thanks for your input! Selected plans have been added to the subscription.");
+		}
+		
+		else {
+			System.out.println("Invalid choice(s)...");
+		}
 		
 		Plans planDetailsCustomer1 = new Plans(tariffPlansCustomer1, customer1, dateOfStart);
-		System.out.println("Tariff plans being added to the account of customer with the customer ID " + customer1.getCustomerId());
+		System.out.println("Active tariff plans in the account of customer with the customer ID " + customer1.getCustomerId());
 		if(PlansService.enterDesiredPlans(planDetailsCustomer1, customer1)) {
 			System.out.println("Done");
 		}
 		else
-			System.out.println("No plans have been selected by the customer yet.");
+			System.out.println("No records found");
 		
 		Bill billOfCustomer1 = new Bill(525, customer1, planDetailsCustomer1);
 		System.out.println("Bill generation successful for the customer with the customer no. " + customer1.getCustomerNumber());

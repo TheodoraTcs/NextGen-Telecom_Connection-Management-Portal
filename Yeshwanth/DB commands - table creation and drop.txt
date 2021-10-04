@@ -7,7 +7,7 @@ tariffRate double, validity int, rental boolean);
 
 create table tbl_Bill(billId int unique, customerId int references tbl_Customers(customerId), month int, fee decimal(6,2));
 
-create table tbl_Plans(planName varchar(30), customerId int references tbl_Customers(customerId), dateOfStart date);
+create table tbl_Plans(planName varchar(40), customerId int references tbl_Customers(customerId), dateOfStart date);
 
 drop table tbl_Bill;
 
