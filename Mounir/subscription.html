@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>My Accounts</title>
+    <script src="functions.js" type="text/javascript"></script>
+</head>
 <body>
 
 <h1>My Account</h1>
@@ -8,7 +12,7 @@
 
 <h2>My Subscriptions</h2>
 
-<table>
+<table id="data_table">
     <thead>
     <tr>
     <th>SUBSCRIPTION</th>
@@ -23,11 +27,11 @@
     <tr>
     <td>59</td>
     <td>Pending</td>
-    <td>August 16, 2021</td>
+    <td>June 16, 2021</td>
     <td>-</td>
     <td>$133.95/month</td>
     <td><button type="button"> View</button>
-        <button type="button"> Cancel subscription</button>
+        <button type="button" onclick="SomeDeleteRowFunction(this)"> Cancel subscription </button>
     </td>
     </tr>
     <tr>
@@ -37,7 +41,7 @@
         <td>-</td>
         <td>$17.95/month</td>
         <td><button type="button"> View</button>
-            <button type="button"> Cancel subscription</button>
+            <button type="button" onclick="SomeDeleteRowFunction(this)"> Cancel subscription </button> 
         </td>
         </tr>
     </tbody>
