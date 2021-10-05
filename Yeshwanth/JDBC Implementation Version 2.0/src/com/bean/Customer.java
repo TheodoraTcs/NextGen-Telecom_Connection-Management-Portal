@@ -9,9 +9,10 @@ public class Customer {
 	private int customerNumber;
 	private String customerPassword;
 	private static int counter = 0;
+	private String customerDate;
 	
 	public Customer(int customerId, String customerName, String customerAddress, String customerEmail,
-			int customerNumber, String customerPassword) {
+			int customerNumber, String customerPassword, String customerDate) {
 		super();
 		this.customerId = customerId;
 		this.customerName = customerName;
@@ -19,6 +20,7 @@ public class Customer {
 		this.customerEmail = customerEmail;
 		this.customerNumber = customerNumber;
 		this.customerPassword = customerPassword;
+		this.customerDate = customerDate;
 		counter++;
 	}
 	
@@ -64,6 +66,11 @@ public class Customer {
 	public static void setCounter(int counter) {
 		Customer.counter = counter;
 	}
-	
+	public void setCustomerDate(){
+		this.customerDate = customerDate;
+	}
+	public String getCustomerDate(){
+		return customerDate;
+	}
 
 }
