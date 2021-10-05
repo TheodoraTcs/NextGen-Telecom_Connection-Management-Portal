@@ -70,4 +70,43 @@ public class CustomerDAO {
 		return fee;
 	
 	}
+	
+	public boolean deleteCustomer(Customer customer){
+		
+		try{
+			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+			con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			
+			String deleteQuery = "DELETE FROM customer_table WHERE id=? AND ? <= DATE({fn TIMESTAMPADD(SQL_TSI_MONTH, -3, CURRENT_TIMESTAMP)})";
+			PreparedStatement ps = con.prepareStatement(deleteQuery);
+			
+			ps.setInt(1, customer.getCustomerId());
+			ps.setString(2, customer.getCustomerDate);
+			
+			int count = ps.executeUpdate();
+			
+			if(count>0){
+				return true;
+			}
+		}
+		catch(ClassNotFoundException | SQLException e){
+			System.out.println(e.getMessage());
+		}
+		catch(Exception ex){
+			System.out.println(ex.getMessage());
+		}
+		finally{
+			if(con!=null){
+				try {
+					con.close();
+					
+				} catch (SQLException e) {
+
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return false;
+	}
 }
